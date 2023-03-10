@@ -13,7 +13,7 @@ $desktop-screen: 750px;
   }
 }
 
-.schedule-page-wrapper {
+.leaderboard-page-wrapper {
   &__title {
     font-size: 1.5rem;
     color: #182c62;
@@ -30,7 +30,7 @@ $desktop-screen: 750px;
     }
 
     .flag {
-      margin-left: 20px;
+      margin-right: 20px;
 
       img {
         width: 53px;
@@ -41,6 +41,10 @@ $desktop-screen: 750px;
     .font-bold {
       font-weight: bold;
       font-size: 1rem;
+
+      &--blue {
+        color: #5292f1;
+      }
     }
 
     .away-team {
@@ -56,29 +60,36 @@ $desktop-screen: 750px;
 
       &:nth-child(odd) {
         background: #f6f7f7;
-        border-top: 1px solid #e4edf2;
-        border-bottom: 1px solid #e4edf2;
       }
 
       .col {
         display: flex;
 
         &_1 {
-          justify-content: flex-end;
+          // justify-content: flex-end;
           align-items: center;
-          grid-column: span 1 / span 1;
+          grid-column: span 7 / span 7;
+          margin-left: 10px;
         }
 
         &_2 {
           align-items: center;
-          grid-column: span 4 / span 4;
-          margin-left: 40px;
+          justify-content: center;
+          grid-column: span 1 / span 1;
+          // margin-left: 40px;
         }
 
         &_3 {
-          justify-content: end;
+          justify-content: center;
           align-items: center;
-          grid-column: span 3 / span 3;
+          grid-column: span 1 / span 1;
+        }
+
+        &_3-4 {
+          display: none;
+          justify-content: center;
+          align-items: center;
+          grid-column: span 2 / span 2;
         }
 
         &_4 {
@@ -89,7 +100,8 @@ $desktop-screen: 750px;
 
         &_5 {
           align-items: center;
-          grid-column: span 3 / span 3;
+          justify-content: center;
+          grid-column: span 2 / span 2;
         }
 
         &--vertical {
@@ -102,38 +114,43 @@ $desktop-screen: 750px;
       @include tablet() {
         .col {
           &_1 {
-            grid-column: span 2 / span 2;
+            grid-column: span 4 / span 4;
           }
 
-          &_2 {
-            display: none;
-          }
-
+          &_2,
+          &_3,
           &_4 {
             grid-column: span 2 / span 2;
           }
 
-          &_3,
           &_5 {
-            grid-column: span 4 / span 4;
+            grid-column: span 2 / span 2;
           }
         }
       }
 
       @include mobile() {
         .col {
-          &_1,
-          &_2 {
-            display: none;
+          &_1 {
+            grid-column: span 6 / span 6;
           }
 
-          &_4 {
+          &_2 {
             grid-column: span 2 / span 2;
           }
 
           &_3,
+          &_4 {
+            display: none;
+          }
+
+          &_3-4 {
+            display: flex;
+          }
+
+          &_3,
           &_5 {
-            grid-column: span 5 / span 5;
+            grid-column: span 2 / span 2;
           }
         }
       }
